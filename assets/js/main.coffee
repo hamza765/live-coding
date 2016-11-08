@@ -1,4 +1,4 @@
-#Just a var used to set padding
+#Just a var used to set padding. I've since removed this, but its up to you.
 _gutter = 50
 #I believe this this the amount of delay between each char in milliseconds
 _writing_rate = 25
@@ -48,7 +48,10 @@ _codes = """
  * Confused? Check it out!
  *
  */
-
+* {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
 body {
   background-color: #{_colors.background}; 
   color: #{_colors.text};
