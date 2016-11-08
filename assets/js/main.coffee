@@ -1,4 +1,6 @@
+#Just a var used to set padding
 _gutter = 50
+#I believe this this the amount of delay between each char in milliseconds
 _writing_rate = 25
 _throttle = {
   start: 4821
@@ -23,7 +25,7 @@ _colors = {
 }
 _body_selection = "document.body"
 _current_code = 0
-_codes = ["""
+_codes = """
 
 
 /* ...                  
@@ -178,7 +180,7 @@ title.innerHTML = "<em>MW</em> is better than <em>TTh</em>";
  *
  */                                  
 """
-]
+
 
 # body selector
 $body = document.getElementsByTagName("body")[0]
@@ -351,7 +353,7 @@ writeChar = (which) ->
   # add text to code block variable for regex matching.
   _code_block += which
     
-  # add character to pre
+  # add character to pre. This is where the code is actually added to the <pre> tag. So if you dont want to show the code, remove this
   $code_pre.innerHTML = code_html
 
 # write all the chars
@@ -367,15 +369,5 @@ writeChars = (message, index, interval) ->
       writeChars message, index, interval
     ), interval
 
-# detect url parameters
-getURLParam = (key, url) ->
-  if typeof url == 'undefined'
-    url = window.location.href
-  match = url.match('[?&]' + key + '=([^&]+)')
-  if match then match[1] else 0
-
-# has version parameter?
-_version = getURLParam "billy"
-
 # initiate the script
-writeChars(_codes[_version], 0, _writing_rate)
+writeChars(_codes, 0, _writing_rate)
