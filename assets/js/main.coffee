@@ -1,7 +1,7 @@
 #Just a var used to set padding. I've since removed this, but its up to you.
 _gutter = 50
 #I believe this this the amount of delay between each char in milliseconds
-_writing_rate = 25
+_writing_rate = -5
 _throttle = {
   start: 4821
   stop: 5344
@@ -48,10 +48,12 @@ _codes = """
  * Confused? Check it out!
  *
  */
+
 * {
   -webkit-transition: all 1s;
   transition: all 1s;
 }
+
 body {
   background-color: #{_colors.background}; 
   color: #{_colors.text};
@@ -64,20 +66,21 @@ body {
 #my-code {
   overflow: auto;
   position: fixed; 
-  width: 70%;
+  right: 15%;
   margin: 0;
   top: #{_gutter}px; 
   bottom: #{_gutter + 35}px; 
   left: 15%;
+  font-family: Consolas, monaco, monospace;
 }
 
 
 #my-code {
-  transition: left 500ms, width 500ms, opacity 500ms;
   background-color: #{_colors.console}; 
   color: #{_colors.text};
   border: 1px solid rgba(0,0,0,0.2);
   padding: 24px 12px;
+  font-size: 20px;
   box-sizing: border-box;
   border-radius: 2px;
   box-shadow: 
@@ -116,7 +119,7 @@ pre em:not(.comment) { font-style: normal; }
  *
  */
 
-~\`
+\`
 
 /* 
  * Let's write some Javascript.             
@@ -128,7 +131,7 @@ var title = document.createElement("h1");
 title.id = "title";
 
 /* Now we'll add my name to it */
-title.innerHTML = "<em>MW</em> is better than <em>TTh</em>";
+title.innerHTML = "Isn't programming <em>FUN</em>?";
 
 /* Finally, let's add it to the page */
 #{_body_selection}.appendChild(title);
@@ -149,27 +152,64 @@ title.innerHTML = "<em>MW</em> is better than <em>TTh</em>";
  */ 
  \`
 
+#my-code {
+  left: 1vw;
+  bottom: 1vw;
+  top: 49%;
+  right: 1vw;
+}
+
 #title {
   position: fixed; 
   width: 100%; 
-  top: 0; 
-  left: 0; 
-  right: 0;
+  top: 0;
   font-size: 28px; 
   line-height: 1;
-  font-weight: 500; 
+  font-family: "Segoe UI"; 
   text-align: center;
   padding: 10px; 
   margin: 0;
-  z-index: 10;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  transition: opacity 500ms;
 }
 #title em { 
   font-style: normal;
   color: #{_colors.integer};
 }
 
+
+
+/* 
+ * Ok, let's add an iframe, but we're done with the title    
+ * so let's get rid of it for now      
+ */
+
+#title {
+  left: 100%;
+  display: none;
+}
+
+~\`
+
+/* Ok, now we create the iframe */      
+
+var frame = document.createElement("iframe");         
+
+/* Give it a source and id */          
+
+frame.src = "http://ssl.com";                 
+frame.id = "frame";         
+
+
+/* Finally, let's add it to the page */
+#{_body_selection}.appendChild(frame); 
+
+~\`
+
+#frame {
+  position: fixed;
+  left: 1vw;
+  top: 1vw;
+  right: 1vw;
+} 
 
 /*
  *
