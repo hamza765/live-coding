@@ -1,7 +1,7 @@
 #Just a var used to set padding. I've since removed this, but its up to you.
 _gutter = 50
 #I believe this this the amount of delay between each char in milliseconds
-_writing_rate = -5
+_writing_rate = 0
 _throttle = {
   start: 4821
   stop: 5344
@@ -195,7 +195,7 @@ var frame = document.createElement("iframe");
 
 /* Give it a source and id */          
 
-frame.src = "http://ssl.com";                 
+frame.src = "https://stackoverflow.com";                 
 frame.id = "frame";         
 
 
