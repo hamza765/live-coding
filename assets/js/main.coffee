@@ -127,14 +127,14 @@ pre em:not(.comment) { font-style: normal; }
  */
 
 /* Let's add a 'h1' element to put my name on here. */
-var title = document.createElement("h1");
-title.id = "title";
+var title = document.createElement("h1");         
+title.id = "title";          
 
 /* Now we'll add my name to it */
-title.innerHTML = "Isn't programming <em>FUN</em>?";
+title.innerHTML = "Isn't programming <em>FUN</em>?";           
 
 /* Finally, let's add it to the page */
-#{_body_selection}.appendChild(title);
+#{_body_selection}.appendChild(title);        
              
 /* 
  * 
@@ -175,41 +175,6 @@ title.innerHTML = "Isn't programming <em>FUN</em>?";
   color: #{_colors.integer};
 }
 
-
-
-/* 
- * Ok, let's add an iframe, but we're done with the title    
- * so let's get rid of it for now      
- */
-
-#title {
-  left: 100%;
-  display: none;
-}
-
-~\`
-
-/* Ok, now we create the iframe */      
-
-var frame = document.createElement("iframe");         
-
-/* Give it a source and id */          
-
-frame.src = "https://hamza765.github.io";                 
-frame.id = "frame";         
-
-
-/* Finally, let's add it to the page */
-#{_body_selection}.appendChild(frame); 
-
-~\`
-
-#frame {
-  position: fixed;
-  left: 1vw;
-  top: 1vw;
-  right: 1vw;
-} 
 
 /*
  *
